@@ -16,7 +16,7 @@
 
 <? 
 // ----------------------------конфигурация-------------------------- // 
-$connection = mysql_connect("localhost", "sa1", "sa1");
+$connection = mysql_connect("localhost", "root", "");
 $db = mysql_select_db("mybd");
 mysql_query(" SET NAMES 'utf8' "); // mysql_set_charset("utf8");
 
