@@ -29,21 +29,20 @@
 	
   <script type="text/javascript" src="javascript/jquery-1.7.min.js"></script>
    <script>
-   $(document).ready (function () {
-    $("#send").click (function () {
-     var name = $("#name").val ();
-     var email = $("#email").val ();    
-     var message = $("#message").val ();
-	 
+ $(document).ready (function () {
+    $("#mail").submit (function () {
+     
      $.ajax ({
       url: 'post.php',
       type: 'POST',
-      cache: false,
-      data: {'name': name, 'email': email, 'message': message},
+      data: $("#mail").serialize(),
       dataType: 'html',
      });
     });
    });
+   
+   
+   
   </script>
    
 </head>
@@ -88,7 +87,7 @@
        <div class="col-sm-3"></div>
        <div class="col-sm-6">
        <h2>Leave message</h2>
- <form >
+ <form id="mail" name="mail">
    
 	<h3 style="text-align:center; font-size:20px; ">
 	<input type="hidden" name="date" value="<?php echo date('Y-m-d');?>">
@@ -96,7 +95,7 @@
     <div class="form-group">
     <label class="control-label" for="name">Name</label>
 		<input type="text" id="name" name="name" class="form-control" pattern="[a-zA-Z]{2,10}" placeholder="Your name..." required><br>
-		 <label class="control-label" for="email">E-mail</label>
+		<label class="control-label" for="email">E-mail</label>
 	   	<input type="email" id="email" name="email" class="form-control" pattern="([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}" placeholder="Your E-mail..." required><br>
 		 <label class="control-label" for="message">Message</label>
         <textarea rows="3" id="message" name="message" class="form-control" placeholder="Your message..." required></textarea>

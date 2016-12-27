@@ -14,7 +14,6 @@ $time=date("H:i:s"); // часы:минуты:секунды
 $connection = mysql_connect("localhost", "root", "");
 $db = mysql_select_db("mybd");
 mysql_query(" SET NAMES 'utf8' "); // mysql_set_charset("utf8");
-
 if(!$connection || !$db)
 {
     exit(mysql_error());
@@ -33,10 +32,10 @@ MESSAGE: $message
  
  
 "; 
-mail("$adminemail", "$date $time Message from $name", "$msg"); 
-
-
  mysql_query("INSERT INTO mail (name, email, message, date, time)
         VALUES ('$name', '$email', '$message', '$date', '$time')");
         mysql_close(); 
+		
+mail("$adminemail", "$date $time Message from $name", "$msg"); 
+
 ?>
