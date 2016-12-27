@@ -95,7 +95,7 @@
 }
 
 
-/*AHS*/
+/**/
 
 h1 {
     margin-top: 80px;
@@ -231,7 +231,7 @@ a {
     background: none;
     border: none;
 }
-div.fancybox-skin {
+.div.fancybox-skin {
     background: rgba(0, 0, 0, 0.1);
 }
 #gallery .div-col-sm-3 {
@@ -245,8 +245,8 @@ div.fancybox-skin {
 }
 
 
-/*FEEDBACK*/
-form {
+/*MAIL*/
+.form {
    width: 50%; 
     margin: 0 auto; 
     text-align: center;
