@@ -21,9 +21,13 @@
 		color: orange;
 		font-family: Convergence;
 		}
-	 input:invalid { 
-	  border: 3px groove red;
-	 }
+	    input:invalid { 
+	    border: 3px groove red;
+	    }
+		input:valid { 
+	    border: 3px groove green;
+		background-color: green;
+	    }
 	 
     </style>
 	
@@ -31,7 +35,8 @@
    <script>
  $(document).ready (function () {
     $("#mail").submit (function () {
-     
+	$('#messageShow').html ("ОТПРАВЛЕНО!" + "<div class='clear'><br></div>");
+	 
      $.ajax ({
       url: 'post.php',
       type: 'POST',
@@ -100,6 +105,7 @@
 		 <label class="control-label" for="message">Message</label>
         <textarea rows="3" id="message" name="message" class="form-control" placeholder="Your message..." required></textarea>
 	</div>
+	<div id="messageShow"></div>
 	
 	<input type="submit" name="send" id="send" value="SEND">
     <input type="reset" name="clear"  id="clear" value="CLEAR">

@@ -264,3 +264,31 @@ a {
     font-size: 20px;
 }
 
+#messageShow {
+    color: red;
+    text-align: center;
+}
+
+#send,
+#clear {
+    background-color: rgba(0, 0, 0, 0.5);
+    -moz-border-radius: 28px;
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    border: 1px solid #000000;
+    font-family: Questrial;
+    font-size: 20px;
+    color: yellow;
+    padding: 8px 15px;
+}
+
+#send:hover,
+#clear:hover {
+     background-color: rgba(0, 0, 0, 0.7);
+}
+
+#send:active,
+#clear:active {
+    position: relative;
+    top: 1px;
+}
